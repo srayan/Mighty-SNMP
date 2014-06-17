@@ -4,13 +4,13 @@ Mighty-SNMP
 Getting system information through SNMP.
 Currently deployed and being tested on an Arch Linux platform.
 
-#Installation
+--Installation
 pacman -S net-snmp
 systemctl enable snmpd
 
 mkdir /etc/snmp/
 
-#Configuring the snmp daemon configuration file.
+--Configuring the snmp daemon configuration file.
 echo rocommunity read_only_user >> /etc/snmp/snmpd.conf
 echo rwcommunity read_write_user >> /etc/snmp/snmpd.conf
 
