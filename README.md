@@ -45,6 +45,7 @@ snmpwalk -D ALL
 
 #MIB directories
 /root/.snmp/mibs
+AND
 /usr/share/snmp/mibs
 
 #For UPS
