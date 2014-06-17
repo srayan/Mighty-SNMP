@@ -59,6 +59,10 @@ to -> /usr/share/snmp/mibs
 #How to retrieve it? --WORKING ON THIS
 
 
+Need to check:
+https://www.zabbix.com/forum/showthread.php?t=26792
+
+
 #Example result from snmpwalk:
 IP-MIB::ipForwarding.0 = INTEGER: notForwarding(2)
 
