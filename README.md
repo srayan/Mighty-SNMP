@@ -46,7 +46,7 @@ snmpwalk -D ALL
 
 
 
-#MIB directories
+#MIB directories (for adding new MIB files, add all modules to these two directories)
 /root/.snmp/mibs
 AND
 /usr/share/snmp/mibs
