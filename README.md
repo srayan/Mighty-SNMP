@@ -74,3 +74,26 @@ ipForwarding.0
 notForwarding(2)
 
 An example would be: snmpget -v 1 -c read_only_user localhost ipForwarding.0
+
+
+
+
+
+
+
+#Sample commands to test:
+snmpget -v 1 -c localhost CISCO-RHINO-MIB::ciscoLS1010ChassisFanLed
+snmptranslate -On CISCO-RHINO-MIB::clsEnetPortDuplex
+
+snmpget -v 1 -c localhost 1.3.6.1.4.1.9.5.11.1.1.12
+
+
+snmpget -v1 -c localhost 162.227.102.191 .1.3.6.1.4.1.9.5.11.1.1.12
+
+
+snmptranslate -m +powernet407 -IR -On powernet407::mfiletransferConfigFTPServerAddress
+
+snmptranslate -m +powernet407 -IR -On mfiletransferConfigFTPServerAddress
+
+
+snmptranslate -m +stdupsv1 -IR -On upsIdentManufacturer
