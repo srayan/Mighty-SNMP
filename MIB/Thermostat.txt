@@ -1,0 +1,88 @@
+IMPORTS
+        enterprises
+                FROM RFC1155-SMI
+        OBJECT-TYPE
+                FROM RFC-1212
+        DisplayString
+                FROM RFC-1213;
+
+epilogue        OBJECT IDENTIFIER ::= {enterprises 12}
+Thermostat      OBJECT IDENTIFIER ::= {epilogue 2}
+
+
+ThermostatManufacturer OBJECT-TYPE
+  SYNTAX  DisplayString
+  ACCESS  read-only
+  STATUS  mandatory
+  DESCRIPTION
+          "The name of the Thermostat 's manufacturer. For  instance, 
+          Microsoft Thermostat ."
+  ::= {Thermostat  1}
+
+ThermostatModelNumber OBJECT-TYPE
+  SYNTAX  DisplayString
+  ACCESS  read-only
+  STATUS  mandatory
+  DESCRIPTION
+          "The name of the Thermostat 's model. For instance,
+          Radiant Automatic."
+  ::= {Thermostat  2}
+
+ThermostatDeviceDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows the implement date of the Thermostat."
+  ::= {Thermostat 3}
+
+ThermostatControl OBJECT-TYPE
+  SYNTAX  INTEGER  {up (1), down (2)}
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable controls the current state of the Thermostat . To 
+          Turn on the compressor, set it to down (1). To turn off the compressor 
+          (perhaps in the event of an emergency), set it to up (2)."
+  ::= {Thermostat  4}
+
+ThermostatElectricityConsumed OBJECT-TYPE
+  SYNTAX  NonNegativeInteger
+  UNITS   "kwh"
+  ACCESS  read-only
+  STATUS  current 
+  DESCRIPTION
+          "This Variable is used to display the amount of electricity consumed
+            by the thermostat in a given period. The consumed electricity is denoted
+	    by KwH"
+  ::= {Thermostat  5}
+
+ThermostatDurationOfUsage OBJECT-TYPE
+  SYNTAX  Integer
+  UNITS   "Minutes"
+  ACCESS  read-only
+  STATUS  current 
+  DESCRIPTION
+          "An Estimate of the number of minutes that the thermostat has been running in a given period. "
+  ::= {Thermostat  6}
+
+ThermostatFilterStatus OBJECT-TYPE
+  SYNTAX  Integer {new (1), replace(2)}
+  ACCESS  read-only
+  STATUS  current 
+  DESCRIPTION
+          "This variable notifies if the filter has to be replaced or not. If the value returned is 1, then the filter is new 
+            and no replacements needed. if the value is 2 then the filter needs to be replaced."
+  ::= {Thermostat  7}
+
+ThermostatTempAlert OBJECT-TYPE
+  SYNTAX  Integer {normal(1), Abnormal(2)}
+  ACCESS  read-only
+  STATUS  current 
+  DESCRIPTION
+          "This variable is used to inform whether the temperature is normal or if there is an abnormal increase in the temperature
+            the temperature is normal if it returns a 1, and there is an emergency if it returns a 2"
+  ::= {Thermostat  8}
+
+
+END
