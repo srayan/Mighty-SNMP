@@ -1,0 +1,183 @@
+iRefrigerator-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+        enterprises
+                FROM RFC1155-SMI
+        OBJECT-TYPE
+                FROM RFC-1212
+        DisplayString
+                FROM RFC-1213;
+
+epilogue        OBJECT IDENTIFIER ::= {enterprises 12}
+iRefrigerator   OBJECT IDENTIFIER ::= {epilogue 2}
+
+
+iRefrigeratorManufacturer OBJECT-TYPE
+  SYNTAX  DisplayString
+  ACCESS  read-only
+  STATUS  mandatory
+  DESCRIPTION
+          "The name of the iRefrigerator's manufacturer. For  instance, 
+          Siemens iRefrigerator."
+  ::= {iRefrigerator 1}
+
+iRefrigeratorModelNumber OBJECT-TYPE
+  SYNTAX  DisplayString
+  ACCESS  read-only
+  STATUS  mandatory
+  DESCRIPTION
+          "The name of the iRefrigerator's model. For instance,
+          Radiant Automatic."
+  ::= {iRefrigerator 2}
+
+iRefrigeratorDeviceDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows the implement date of the iRefrigerator."
+  ::= {iRefrigerator 3}
+
+milkQuantity OBJECT-TYPE
+  SYNTAX  INTEGER (1..10)
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows how many gallons of milk are left in the 
+           iRefrigerator."
+  ::= {iRefrigerator 4}
+
+eggsQuantity OBJECT-TYPE
+  SYNTAX  INTEGER (1..10)
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows how many dozens of eggs are left in the 
+           iRefrigerator."
+  ::= {iRefrigerator 5}
+
+beerQuantity OBJECT-TYPE
+  SYNTAX  INTEGER (1..10)
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows how many bottles of beer are left in the 
+           iRefrigerator."
+  ::= {iRefrigerator 6}
+
+vegetablesQuantity OBJECT-TYPE
+  SYNTAX  INTEGER (1..10)
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows how many Kgs of vegetables are left in the 
+           iRefrigerator."
+  ::= {iRefrigerator 7}
+
+icecreamQuantity OBJECT-TYPE
+  SYNTAX  INTEGER (1..10)
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows how many Kgs of icecream are left in the 
+           iRefrigerator."
+  ::= {iRefrigerator 8}
+
+fruitsQuantity OBJECT-TYPE
+  SYNTAX  INTEGER (1..10)
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable shows how many Kgs of fruits are left in the 
+           iRefrigerator."
+  ::= {iRefrigerator 9}
+
+frozenfoodQuantity OBJECT-TYPE
+  SYNTAX  INTEGER (1..10)
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This variable shows how many Kgs of frozenfood are left in the 
+           iRefrigerator."
+  ::= {iRefrigerator 10}
+
+milkExpiryDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This shows the expiry date of the milk."
+  ::= {iRefrigerator 11}
+
+eggsExpiryDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This shows the expiry date of the eggs."
+  ::= {iRefrigerator 12}
+
+beerExpiryDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This shows the expiry date of the beer."
+  ::= {iRefrigerator 13}
+
+vegetablesExpiryDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This shows the expiry date of the vegetables."
+  ::= {iRefrigerator 14}
+
+icecreamExpiryDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This shows the expiry date of the icecream."
+  ::= {iRefrigerator 15}
+
+fruitsExpiryDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This shows the expiry date of the fruits."
+  ::= {iRefrigerator 16}
+
+frozenfoodExpiryDate OBJECT-TYPE
+  SYNTAX  DATE 
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+         "This shows the expiry date of the frozenfood."
+  ::= {iRefrigerator 17}
+
+iRefrigeratorFilterStatus OBJECT-TYPE
+  SYNTAX  Char(10) (
+                    new,
+                    used
+                  )
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable informs the user of the current status of the iRefrigerator's filter."
+  ::= {iRefrigerator 18}
+
+childLockStatus OBJECT-TYPE
+  SYNTAX  Char(10) (
+                    active,
+                    not started
+                  )
+  ACCESS  read-write
+  STATUS  mandatory
+  DESCRIPTION
+          "This variable informs the user of the current status of the iRefrigerator's childlock."
+  ::= {iRefrigerator 19}
+
+
+END
